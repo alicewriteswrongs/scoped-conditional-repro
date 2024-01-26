@@ -9,6 +9,16 @@
     <script nomodule src="/build/slot-parent-thing.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <script>
+      function toggleHelloMessage() {
+        const scopedConditional = document.querySelector('scoped-conditional');
+        scopedConditional.renderHello = !scopedConditional.renderHello;
+      }
+    </script>
+
+    <button id="toggleHello" onclick="toggleHelloMessage()">Toggle Hello Message</button>
+    <scoped-conditional>
+      <div>This div will be slotted in</div>
+    </scoped-conditional>
   </body>
 </html>
